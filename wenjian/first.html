@@ -42,7 +42,7 @@
             form.append("data",data);
             form.append("filename",file.name);
             form.append("filesize",file.size);
-            var url="/wenjian/aaa.php";
+            var url="/sepproject/wenjian/aaa.php";
             $.ajax({
                 type:"post",
                 data:form,
@@ -58,6 +58,8 @@
                             per = 100 + "%";
                             $("#per").css({width:per});
                             $("#per_num").text(per);
+                            var video="<video src='"+res.data.path+"' controls='controls'></video>";
+                            $("#show_img").append(video);
                         }else{
                             chunk=chunk+1;
                             per=100+"%";
